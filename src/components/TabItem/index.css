@@ -1,0 +1,17 @@
+/* Write your CSS here */
+.tab-item {
+  margin-right: 16px;
+}
+
+.tab-button {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.active-tab-btn {
+  border-bottom: 2px solid #2563eb;
+  color: #2563eb;
+}
