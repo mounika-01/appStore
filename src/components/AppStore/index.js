@@ -1,41 +1,41 @@
-import React, { Component } from 'react';
-import TabItem from '../TabItem';
-import AppItem from '../AppItem';
-import './AppStore.css';
+import React, {Component} from 'react'
+import TabItem from '../TabItem'
+import AppItem from '../AppItem'
+import './AppStore.css'
 
 class AppStore extends Component {
   state = {
     activeTab: this.props.tabsList[0].tabId, // Start with the first tab
     searchInput: '',
-  };
+  }
 
-  handleSearchChange = (event) => {
-    this.setState({ searchInput: event.target.value });
-  };
+  handleSearchChange = event => {
+    this.setState({searchInput: event.target.value})
+  }
 
-  handleTabClick = (tabId) => {
-    this.setState({ activeTab: tabId });
-  };
+  handleTabClick = tabId => {
+    this.setState({activeTab: tabId})
+  }
 
   getFilteredApps = () => {
-    const { appsList } = this.props;
-    const { activeTab, searchInput } = this.state;
+    const {appsList} = this.props
+    const {activeTab, searchInput} = this.state
 
     return appsList
-      .filter((app) => app.category === activeTab)
-      .filter((app) =>
-        app.appName.toLowerCase().includes(searchInput.toLowerCase())
-      );
-  };
+      .filter(app => app.category === activeTab)
+      .filter(app =>
+        app.appName.toLowerCase().includes(searchInput.toLowerCase()),
+      )
+  }
 
   render() {
-    const { tabsList } = this.props;
-    const filteredApps = this.getFilteredApps();
+    const {tabsList} = this.props
+    const filteredApps = this.getFilteredApps()
 
     return (
       <div className="app-store-container">
-        <h1 className="app-store-title">App Store</h1> {/* Test Case: Main heading */}
-
+        <h1 className="app-store-title">App Store</h1>{' '}
+        {/* Test Case: Main heading */}
         <div className="search-container">
           <input
             type="search"
@@ -47,11 +47,11 @@ class AppStore extends Component {
             src="search-icon-url"
             alt="search icon"
             className="search-icon"
-          /> {/* Test Case: Search icon */}
+          />{' '}
+          {/* Test Case: Search icon */}
         </div>
-
         <ul className="tabs-container">
-          {tabsList.map((tab) => (
+          {tabsList.map(tab => (
             <TabItem
               key={tab.tabId} // Test Case: Unique key
               tabDetails={tab}
@@ -60,9 +60,8 @@ class AppStore extends Component {
             />
           ))}
         </ul>
-
         <ul className="apps-container">
-          {filteredApps.map((app) => (
+          {filteredApps.map(app => (
             <AppItem
               key={app.appId} // Test Case: Unique key
               appDetails={app}
@@ -70,8 +69,8 @@ class AppStore extends Component {
           ))}
         </ul>
       </div>
-    );
+    )
   }
 }
 
-export default AppStore;
+export default AppStore
