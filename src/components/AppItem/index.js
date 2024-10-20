@@ -1,8 +1,8 @@
 import React from 'react'
-import './AppItem.css'
-import './index.css'
-const AppItem = ({appDetails}) => {
-  const {appName, imageUrl} = appDetails
+import './index.css'  // Correct import for styles
+
+const AppItem = ({ appDetails }) => {
+  const { appName, imageUrl } = appDetails
 
   return (
     <li className="app-item">
