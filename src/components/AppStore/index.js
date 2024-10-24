@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import TabItem from '../TabItem'
 import AppItem from '../AppItem'
 import './AppStore.css'
+import './index.css'
 
 class AppStore extends Component {
   state = {
