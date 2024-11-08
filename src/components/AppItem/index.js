@@ -1,15 +1,14 @@
-import React from 'react'
-import './index.css'  // Correct import for styles
+// Write your code here
+import './index.css'
 
-const AppItem = ({ appDetails }) => {
-  const { appName, imageUrl } = appDetails
+const AppItem = props => {
+  const {appDetails} = props
+  const {appName, imageUrl} = appDetails
 
   return (
     <li className="app-item">
-      <img src={imageUrl} alt={appName} className="app-image" />{' '}
-      {/* Test Case: Image with alt */}
-      <p className="app-name">{appName}</p>{' '}
-      {/* Test Case: Paragraph with app name */}
+      <img src={imageUrl} alt={appName} className="app-image" />
+      <p className="app-name">{appName}</p>
     </li>
   )
 }
