@@ -1,12 +1,12 @@
-import React from 'react';
-import './TabItem.css';
+import React from 'react'
+import './TabItem.css'
 
-const TabItem = ({ tabDetails, onClickTab, isActive }) => {
-  const { tabId, displayText } = tabDetails;
+const TabItem = ({tabDetails, onClickTab, isActive}) => {
+  const {tabId, displayText} = tabDetails
 
   const handleClick = () => {
-    onClickTab(tabId);
-  };
+    onClickTab(tabId)
+  }
 
   return (
     <li className={`tab-item ${isActive ? 'active-tab-btn' : ''}`}>
@@ -14,7 +14,7 @@ const TabItem = ({ tabDetails, onClickTab, isActive }) => {
         {displayText}
       </button>
     </li>
-  );
-};
+  )
+}
 
-export default TabItem;
+export default TabItem
