@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import TabItem from '../TabItem'
 import AppItem from '../AppItem'
-import './AppStore.css'
+import PropTypes from 'prop-types'
 import './index.css'
 
 class AppStore extends Component {
@@ -72,6 +72,24 @@ class AppStore extends Component {
       </div>
     )
   }
+}
+
+// Adding PropTypes for validation
+AppStore.propTypes = {
+  tabsList: PropTypes.arrayOf(
+    PropTypes.shape({
+      tabId: PropTypes.string.isRequired,
+      displayText: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  appsList: PropTypes.arrayOf(
+    PropTypes.shape({
+      appId: PropTypes.string.isRequired,
+      appName: PropTypes.string.isRequired,
+      imageUrl: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 }
 
 export default AppStore
